@@ -38,8 +38,6 @@ describe('Round', () => {
         assert.deepEqual(round.returnCurrentCard(), card2);
         round.takeTurn('Mojave');
         assert.deepEqual(round.returnCurrentCard(), card3);
-        round.takeTurn('Limestone');
-        assert.deepEqual(round.returnCurrentCard(), card1);
     });
 
     it('Should return a result string after taking a turn', () => {

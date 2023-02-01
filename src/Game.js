@@ -26,6 +26,16 @@ class Game {
   printQuestion(round) {
       util.main(round);
   }
+
+  createCards() {
+    const cards = prototypeQuestions.map(question => new Card(question.id, question.question, question.answers, question.correctAnswer));
+    return cards;
+  }
+
+  createDeck(cards) {
+    return new Deck(cards);
+  }
+
 }
 
 module.exports = Game;
