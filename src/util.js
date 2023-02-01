@@ -36,6 +36,13 @@ async function main(round) {
   const getConfirm = await inquirer.prompt(confirmUpdate(getAnswer.answers, round));
 
     if(!round.returnCurrentCard()) {
+      if(round.calculatePercentCorrect() < 90){
+        round.endRound();
+        console.log("You need more practice!")
+        const Game = require('./Game');
+        const game = new Game();
+        newGame.start();
+      }
       round.endRound();
     } else {
       main(round);
